@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "A portfolio website showcasing education projects with contact information and links to GitHub and Instagram.",
+  "main": "src/js/main.js",
+  "scripts": {
+    "start": "live-server src/pages",
+    "server": "node server.js",
+    "dev": "concurrently \"npm start\" \"npm run server\"",
+    "build": "echo 'Build step not defined'"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

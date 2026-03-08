@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Welcome - Diwakar B Portfolio</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+    <style>
+      main {
+        background: var(--bg-primary);
+        min-height: calc(100vh - 80px);
+      }
+
+      .welcome-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 80px);
+        padding: 40px 20px;
+        background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Animated background elements */
+      .welcome-container::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+        opacity: 0.05;
+        animation: float 20s infinite ease-in-out;
+      }
+
+      .welcome-container::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: -30%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+        opacity: 0.05;
+        animation: float 25s infinite ease-in-out reverse;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(30px); }
+      }
+
+      .welcome-card {
+        background: var(--bg-secondary);
+        padding: 60px 40px;
+        border-radius: var(--radius);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        border: 1px solid var(--border-color);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .welcome-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 60px rgba(0, 180, 216, 0.15);
+      }
+
+      .welcome-icon {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        color: var(--accent-color);
+        animation: pulse 2s infinite ease-in-out;
+      }
+
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+      }
+
+      .welcome-card h1 {
+        color: var(--text-primary);
+        margin-bottom: 15px;
+        font-size: 2.8rem;
+        font-weight: 700;
+        letter-spacing: -1px;
+      }
+
+      .welcome-card p {
+        color: var(--text-secondary);
+        margin-bottom: 35px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .welcome-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .welcome-form input {
+        padding: 16px;
+        border: 2px solid var(--border-color);
+        border-radius: 10px;
+        font-size: 1rem;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: 'Inter', Arial, sans-serif;
+        transition: all 0.3s ease;
+      }
+
+      .welcome-form input::placeholder {
+        color: var(--text-secondary);
+      }
+
+      .welcome-form input:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.1);
+        background: var(--bg-secondary);
+      }
+
+      .welcome-form button {
+        padding: 16px;
+        background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .welcome-form button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        transition: left 0.3s ease;
+      }
+
+      .welcome-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+      }
+
+      .welcome-form button:hover::before {
+        left: 100%;
+      }
+
+      .welcome-form button:active {
+        transform: translateY(0);
+      }
+
+      .success-message {
+        color: #4caf50;
+        margin-bottom: 20px;
+        display: none;
+        font-weight: 600;
+        animation: slideIn 0.5s ease;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Dark theme specific */
+      [data-theme="dark"] .welcome-card {
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      [data-theme="dark"] .welcome-card:hover {
+        box-shadow: 0 20px 60px rgba(77, 171, 247, 0.2);
+      }
+
+      /* Colorful theme specific */
+      [data-theme="colorful"] .welcome-card h1 {
+        color: #4b0082;
+      }
+
+      @media (max-width: 600px) {
+        .welcome-card {
+          padding: 45px 25px;
+        }
+
+        .welcome-card h1 {
+          font-size: 2.2rem;
+        }
+
+        .welcome-icon {
+          font-size: 2.5rem;
+        }
+
+        .welcome-container::before,
+        .welcome-container::after {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="welcome.html">&#x1F4BC; Diwakar</a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index-main.html" class="nav-link">Home</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="visitors.html" class="nav-link">Visitors</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-toggle-on"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="welcome-container">
+            <div class="welcome-card">
+                <div class="welcome-icon">
+                    &#x1F600;
+                </div>
+                <h1>Welcome&nbsp;&#x2728;</h1>
+                <p>Please enter your name to continue exploring</p>
+                <div class="success-message" id="successMessage">
+                    &#x2713; Thank you! Your name has been saved.
+                </div>
+                <form class="welcome-form" id="welcomeForm">
+                    <input
+                      type="text"
+                      id="visitorName"
+                      placeholder="&#x270D; Enter your name"
+                      required
+                      autocomplete="off"
+                    />
+                    <button type="submit">&#x2192; Enter Portfolio</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script>
+      document.getElementById('welcomeForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('visitorName').value.trim();
+        
+        if (!name) {
+          alert('Please enter your name');
+          return;
+        }
+
+        try {
+          const response = await fetch('http://localhost:3000/api/visitors', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name }),
+          });
+
+          if (response.ok) {
+            const successMsg = document.getElementById('successMessage');
+            successMsg.style.display = 'block';
+            
+            setTimeout(() => {
+              window.location.href = 'index-main.html';
+            }, 1500);
+          } else {
+            alert('Error saving your name. Please try again.');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Error connecting to server. Proceeding to portfolio...');
+          setTimeout(() => {
+            window.location.href = 'index-main.html';
+          }, 1000);
+        }
+      });
+    </script>
+</body>
+</html>

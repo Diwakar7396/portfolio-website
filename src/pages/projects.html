@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects - Portfolio</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Apply saved theme immediately to prevent flash of default theme
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main navigation">
+            <div class="nav-brand">
+                <a href="portfolio.html">&#x1F4BC; Diwakar</a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="portfolio.html" class="nav-link">Home</a></li>
+                    <li><a href="education.html" class="nav-link">Education</a></li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="visitors.html" class="nav-link">Visitors</a></li>
+                </ul>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-toggle-on"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="projects-section container">
+            <h1 class="section-title">My Education Projects</h1>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h2>Project Title 1</h2>
+                    <p>Description of project 1, highlighting skills and technologies used.</p>
+                    <a href="https://github.com/yourusername/project1" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </article>
+                <article class="project-card">
+                    <h2>Project Title 2</h2>
+                    <p>Description of project 2, highlighting skills and technologies used.</p>
+                    <a href="https://github.com/yourusername/project2" target="_blank" class="project-link">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </article>
+                <!-- Add more projects as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Diwakar7396" target="_blank" rel="noopener noreferrer" class="social-icon github" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/diwakar-b-24b300291/" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.instagram.com/lovely.divakar_/" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://x.com/LovelyDivakar15" target="_blank" rel="noopener noreferrer" class="social-icon twitter" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Diwakar B. All rights reserved.</p>
+        </div>
+    </footer>
+    <button class="scroll-top" aria-label="Scroll to top" style="display:none;">
+        ↑
+    </button>
+    <script src="../js/main.js"></script>
+</body>
+</html>
